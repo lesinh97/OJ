@@ -21,8 +21,8 @@ User.create!(name:  "ledinhsinh",
                password_confirmation: password)
 end
 
-users = User.order(:created_at).take(6)
-50.times do
+users = User.order(:created_at).take(1)
+100.times do
   title = Faker::ProgrammingLanguage.name
   content = Faker::ProgrammingLanguage.creator
   users.each { |user| user.microposts.create!(title: title,  content: content) }

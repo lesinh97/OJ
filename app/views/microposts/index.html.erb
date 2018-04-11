@@ -1,12 +1,25 @@
 <% provide(:title, 'Blog') %>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-preview">
+            <%= will_paginate @micropost, renderer: BootstrapPagination::Rails, class: "pager" %>
+            <ul>
+            <% @micropost.each do |micropost| %>
+                <h2 class="post-title"><li>
+                <%= link_to micropost.title, micropost %>
+                </li></h2>
+                <h3 class="post-preview">
+                <%= link_to micropost.content, micropost %>
+                </h3>
+              <% end %>
+            </ul>
+            <%= will_paginate @micropost, renderer: BootstrapPagination::Rails, class: "pager"  %>s
+            </div>
 
-<h1>Post</h1>
-<%= will_paginate @micropost, renderer: BootstrapPagination::Rails, class: "pagination" %>
-<ul>
-<% @micropost.each do |micropost| %>
-    <h2 class="post-title"><li>
-    <%= link_to micropost.title, micropost %>
-    </li></h2>
-  <% end %>
-</ul>
-<%= will_paginate @micropost, renderer: BootstrapPagination::Rails, class: "pagination"  %>
+        </div>
+    </div>
+</div>
+
+<br>
