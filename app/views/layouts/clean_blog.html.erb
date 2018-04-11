@@ -14,8 +14,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<%= render 'clean_blogs/shim' %>
+<%= render 'clean_blogs/navigation' %>
+<%= render 'clean_blogs/header' %>
 <%= yield %>
-
+<%= render 'clean_blogs/footer' %>
 </body>
 </html>

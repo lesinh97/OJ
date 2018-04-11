@@ -18,12 +18,13 @@ module SessionsHelper
               log_in user
               @current_user = user
             end
-          end
+        end
     end
 # Tra ve true neu user da login
     def logged_in?
         !current_user.nil?
     end
+
 # Log out user.
     def log_out
         forget(current_user)

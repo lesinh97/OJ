@@ -1,7 +1,5 @@
 <% provide(:title, 'Sign up') %>
-<%= render 'clean_blogs/shim' %>
-<%= render 'clean_blogs/navigation' %>
-<%= render 'clean_blogs/header' %>
+
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-login">
@@ -10,7 +8,7 @@
                     <div class="col-lg-12">
     <h2>SIGN UP</h2>
                         
-    <%= form_for(:session, url: signup_path)  do |f| %>
+    <%= form_for(@user, url: signup_path)  do |f| %>
         <%= render 'shared/error_messages' %>
                         <div class="form-group">
       <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
@@ -44,4 +42,3 @@
             </div>
                 </div>
                     </div>
-<%= render 'clean_blogs/footer' %>

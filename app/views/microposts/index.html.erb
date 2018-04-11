@@ -1,0 +1,12 @@
+<% provide(:title, 'Blog') %>
+
+<h1>Post</h1>
+<%= will_paginate @micropost, renderer: BootstrapPagination::Rails, class: "pagination" %>
+<ul>
+<% @micropost.each do |micropost| %>
+    <h2 class="post-title"><li>
+    <%= link_to micropost.title, micropost %>
+    </li></h2>
+  <% end %>
+</ul>
+<%= will_paginate @micropost, renderer: BootstrapPagination::Rails, class: "pagination"  %>

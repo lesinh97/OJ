@@ -1,7 +1,5 @@
 <% provide(:title, @user.name) %>
-<%= render 'clean_blogs/shim' %>
-<%= render 'clean_blogs/navigation' %>
-<%= render 'clean_blogs/header' %>
+
 <div class="container">
 <div class="row">
   <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -9,8 +7,16 @@
       <h1 class="post-title">
         <%= @user.name %>
       </h1>
+      <div class="col-md-8">
+    <% if @user.microposts.any? %>
+      <h3>Post (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts, renderer: BootstrapPagination::Rails, class: "pagination"  %>
+      <% end %>
+  </div>
     </div>
   </div>
 </div>
 </div>
-<%= render 'clean_blogs/footer' %>
